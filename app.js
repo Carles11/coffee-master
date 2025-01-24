@@ -1,11 +1,18 @@
+import Store from "./services/Store.js";
+import { loadData } from "./services/Menu.js";
+import Router from "./services/Router.js";
 
-import Store from "./services/Store.js"
-import { loadData } from "./services/Menu.js"
+// Link my Web Components
+import { MenuPage } from "./components/MenuPage.js";
+import { DetailsPage } from "./components/DetailsPage.js";
+import { OrderPage } from "./components/OrderPage.js";
 
-window.app = {}
-app.store = Store
+window.app = {};
+app.store = Store;
+app.router = Router;
 
 // It´s better to wait for the event for manipulation
-window.addEventListener("DOMContentLoaded", async ()=>{
-   loadData()
-})
+window.addEventListener("DOMContentLoaded", async () => {
+  loadData();
+  app.router.init();
+});
