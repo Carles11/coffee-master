@@ -40,7 +40,7 @@ const Router = {
           pageElement = document.createElement("details-page");
           //   pageElement.textContent = "Details";
           const paramId = path.substring(path.lastIndexOf("-") + 1);
-          pageElement.dataset.id = paramId;
+          pageElement.dataset.productId = paramId;
         }
     }
     if (pageElement) {
