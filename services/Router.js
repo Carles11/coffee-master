@@ -17,7 +17,7 @@ const Router = {
     Router.go(location.pathname);
   },
   go: (path, addToHistory = true) => {
-    console.log(`Going to: ${path}`);
+    // console.log(`Going to: ${path}`);
 
     if (addToHistory) {
       history.pushState({ path }, "", path);
@@ -52,6 +52,9 @@ const Router = {
       // scroll to the top after every route change
       window.scrollX = 0;
       window.scrollY = 0;
+    } else {
+      // 404
+      document.querySelector("main").innerHTML = "Oups! Page not found. 404";
     }
   },
 };
